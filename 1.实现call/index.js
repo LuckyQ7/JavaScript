@@ -4,7 +4,8 @@ Function.prototype._call = function _call(thisArg, ...args) {
     // 隐式绑定this
     const fn = this
     // 防止是非对象类型
-    thisArg = thisArg ? Object(thisArg) : window
+    thisArg = (thisArg != undefined && thisArg !== null) ? Object(thisArg) : window
+    // 绑定this
     thisArg.fn = fn
     // 传入其他参数
     var result = thisArg.fn(...args)
