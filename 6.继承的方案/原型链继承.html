@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Father(name) {
+            this.name = name
+            this.friends = []
+        }
+
+        Father.prototype.eating = function () {
+            console.log(this.name, 'eating');
+        }
+
+
+        function Son(name) {
+            this.name = name
+        }
+
+        Son.prototype = new Father()
+        let f1 = new Father('爸爸')
+        let s1 = new Son('儿子')
+        let s2 = new Son('儿子2')
+        f1.eating()
+        s1.eating()
+        s1.friends.push('123')
+        console.log(s1.friends);
+        console.log(s2.friends);
+    </script>
+</body>
+
+</html>
