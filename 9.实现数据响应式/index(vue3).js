@@ -1,5 +1,4 @@
 let activeReactiveFn = null
-
 class Depend {
     constructor() {
         this.reactives = new Set()
