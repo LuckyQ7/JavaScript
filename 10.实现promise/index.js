@@ -52,7 +52,6 @@ class MyPromise {
         }
 
     }
-
     then(onfulfilled, onrejected) {
         // 因为reject调用的是返回的新的promis, 所以onrejected是undefined，默认抛出异常，就会被第二个promise捕捉到
         const defultOnrejected = (err) => { throw err }
@@ -61,7 +60,6 @@ class MyPromise {
         // 解决加了finally无法链式调用的问题
         const defultOnfulfilled = (value) => { return value }
         onfulfilled = onfulfilled || defultOnfulfilled
-
 
 
         return new MyPromise((resolve, reject) => {
