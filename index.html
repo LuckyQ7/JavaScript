@@ -8,8 +8,22 @@
     <title>Document</title>
 </head>
 
+
+
 <body>
-    <script src="./10.实现promise/index.js"></script>
+    <input type="text">
+    <!-- <script src="./10.实现promise/index.js"></script> -->
+    <!-- <button>取消</button> -->
+
+    <!-- <script src="./12.防抖和节流/debounce.js"></script> -->
+    <script src="./12.防抖和节流/throttle.js"></script>
+    <script>
+        const input = document.querySelector('input')
+        const handleInput = throttle(function (e) {
+            console.log(this, e.target.value);
+        }, 2000)
+        input.addEventListener('input', handleInput)
+    </script>
 </body>
 
 </html>
