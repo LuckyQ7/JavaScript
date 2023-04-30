@@ -5,7 +5,7 @@ function throttle(fn, interval, options = { immediate: false, trailing: true }, 
         const nowTime = +new Date()
         if (lastTime == 0 && !options.immediate) lastTime = nowTime
 
-        const reamainTime = interval - (nowTime - lastTime)
+        const reamainTime = interval - (nowTime - lastTime)  // 剩余时间
 
         if (reamainTime <= 0) {
             if (timer) {
